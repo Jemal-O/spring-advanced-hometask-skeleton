@@ -1,0 +1,43 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body link=" #000000" vlink=" #000000" alink=" #000000">
+		<h1>Events</h1>
+		<br>
+		<form action="${rc.contextPath}/events/save/" method="post">
+		   <br>
+		   	<select name="auditoriumName" required>
+			   #foreach($name in $auditoriums)
+			 		<option value="${name.name}">${name.name}</option>
+				#end
+			</select>
+			<br>
+			<br>
+			<input type="text" name="name" placeholder="Write event name" required>
+		   <br>
+		   <br>
+		   <input type="number" name="basePrice" placeholder="Write basePrice" min="1" max="1000" required>
+		   <br>
+		   <br>
+		   <input type="datetime-local" name="airDateTime">
+		   <br>
+		   <p><input type="submit" value="Send"></p>
+	  	</form>
+		<hr>
+		<b>Event Details by id:</b>
+		<br><br>
+	  	#foreach($name in $events)
+ 			<a href="${rc.contextPath}/events/${name.id}">${name.name}</a>
+ 			<br><br>
+		#end
+		<b>Remove Event :</b>
+		#foreach($name in $events)
+ 			<a href="${rc.contextPath}/events/remove/${name.name}">${name.name}</a>
+ 			<br><br>
+		#end
+		<b>Print event</b>
+		<a href="${rc.contextPath}/events/get-all/pdf">Events PDF print</a>
+		<br>
+		<br>
+		<b><a href="${rc.contextPath}/logout">Logout</a></b>
+	</body>
+</html>

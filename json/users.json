@@ -1,0 +1,16 @@
+[
+	{
+		"firstName":"Valentin",
+		"lastName": "Valentyev",
+		"email":"valentin@mail.ru",
+		"password":"77ca30fc816cdac911b253197144324c",
+		"roles":"REGISTERED_USER"
+	},
+	{
+		"firstName":"Aleks",
+		"lastName":"Allen",
+		"email":"aleks@mail.ru",
+		"password":"5d06a786b78aa91502cc9c597190daaf",
+		"roles":"REGISTERED_USER"
+	}
+]

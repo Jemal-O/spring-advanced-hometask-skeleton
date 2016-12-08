@@ -1,0 +1,8 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<h1>There is exception in controller. Exception message:</h1>
+		<hr>
+		<h2>${mes}</h2>
+	</body>
+</html>

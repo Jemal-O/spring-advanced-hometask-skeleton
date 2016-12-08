@@ -1,0 +1,12 @@
+[
+	{
+		"name":"White and Black",
+		"numberOfSeats": "30",
+		"isAssign":"true"
+	},
+	{
+		"name":"Verona",
+		"numberOfSeats":"50",
+		"isAssign":"false"
+	}
+]

@@ -1,0 +1,11 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<h2>Auditorium</h2>
+		<ul>
+			#foreach($name in $auditoriumsList)
+				<li>${name}</li>
+			#end
+		</ul>
+	</body>
+</html>

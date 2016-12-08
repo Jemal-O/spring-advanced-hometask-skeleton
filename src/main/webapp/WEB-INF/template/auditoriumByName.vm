@@ -1,0 +1,7 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<h1>Auditorium details: Details</h1>
+		${auditorium}
+	</body>	
+</html>

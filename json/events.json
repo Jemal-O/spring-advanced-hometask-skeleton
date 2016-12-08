@@ -1,0 +1,16 @@
+[
+	{
+	"name":"Vivien",
+	"airDateTime":"2016-05-28T17:39:44.937",
+	"basePrice":"300",
+	"rating":"LOW",
+	"auditoriumId":"1"
+	},
+	{
+	"name":"Venera",
+	"airDateTime":"2016-05-28T17:39:44.937",
+	"basePrice":"400",
+	"rating":"MID",
+	"auditoriumId":"2"
+	}
+]

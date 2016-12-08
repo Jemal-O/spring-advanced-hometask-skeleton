@@ -1,0 +1,27 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body link=" #000000" vlink=" #000000" alink=" #000000">
+		<h1>Accounts</h1>
+		<br>
+		<form action="${rc.contextPath}/accounts/updateAccount" method="post">
+		   <br>
+		 	Refilling balance for ${user} current balance ${balance} RUR
+		   <br>
+		   <br>
+		   <input type="number" name="money" placeholder="Write money" min="1" max="1000" required>
+		   <br>
+		   <p><input type="submit" value="Send"></p>
+	  	</form>
+		<hr>
+		<h1>Accounts review</h1>
+	  	#foreach($account in $accounts)
+ 			<a href="${rc.contextPath}/accounts/account/${account.id}">Account Info # ${account.id}</a>
+ 			<br><br>
+		#end
+		<h1>Accounts PDF</h1>
+		<a href="${rc.contextPath}/accounts/get-all/pdf">PDF print</a>
+		<br>
+		<br>
+		<b><a href="${rc.contextPath}/logout">Logout</a></b>
+	</body>
+</html>

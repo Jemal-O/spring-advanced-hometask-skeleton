@@ -1,0 +1,12 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<h2>All Tickets</h2>
+		<hr>
+		<ul>
+			#foreach($ticket in $allTickets)
+				<li>${ticket}</li>
+			#end
+		</ul>
+	</body>
+</html>

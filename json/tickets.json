@@ -1,0 +1,16 @@
+[
+	{
+	"userId":"2",
+	"eventId":"1",
+	"seat":"120",
+	"ticketPrice":"500",
+	"isPurchased":"true"
+	},
+	{
+	"userId":"1",
+	"eventId":"2",
+	"seat":"300",
+	"ticketPrice":"600",
+	"isPurchased":"false"
+	}
+]

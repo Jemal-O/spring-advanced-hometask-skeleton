@@ -1,0 +1,38 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body link=" #000000" vlink=" #000000" alink=" #000000">
+		<h1>Booking Ticket</h1>
+		<br>
+		Your balance ${balance} RUR
+		<form action="${rc.contextPath}/tickets/book" method="post">
+		   <br>
+		   	<select name="eventName" required>
+			   #foreach($name in $eventsName)
+			 		<option value="${name.name}">${name.name} - ${name.basePrice} RUR</option>
+				#end
+			</select>
+			<br>
+			<br>
+			<select name="email" required>
+			   #foreach($email in $usersEmail)
+			 		<option value="${email.email}">${email.email}</option>
+				#end
+			</select>
+		   <br>
+		   <br>
+		   <input type="number" name="seat" placeholder="Write seat" min="1" max="5" required>
+		   <br>
+		   <p><input type="submit" value="Send"></p>
+	  	</form>
+		<hr>
+		<h1>Ticket review</h1>
+	  	#foreach($name in $eventsName)
+ 			<a href="${rc.contextPath}/tickets/purchased/${name.name}">Purchased To ${name.name}</a>
+ 			<br><br>
+		#end
+		<a href="${rc.contextPath}/tickets/get-all/pdf">PDF print</a>
+		<br>
+		<br>
+		<b><a href="${rc.contextPath}/logout">Logout</a></b>
+	</body>
+</html>

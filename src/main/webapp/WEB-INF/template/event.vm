@@ -1,0 +1,7 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<h1>Event Details</h1>
+		${event}
+	</body>	
+</html>

@@ -1,0 +1,40 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body link=" #000000" vlink=" #000000" alink=" #000000">
+		<h1>Auditoriums</h1>
+		<br>
+		<form action="${rc.contextPath}/auditoriums/auditorium/create/" method="post">
+		   <br>
+		   	<input type="text" name="auditoriumName" placeholder="Write auditorium name" required>
+			<br>
+			<br>
+			<input type="number" name="numberOfSeats" placeholder="Write number of seats" min="1" max="300" required>
+		   <br>
+		   <br>
+			<input type="checkBox" name="isAssign">
+		   <br>
+		   <p><input type="submit" value="Send"></p>
+	  	</form>
+		<hr>
+		<b>Auditorium Details by id:</b>
+		<br><br>
+	  	#foreach($id in $auditoriums)
+ 			<a href="${rc.contextPath}/auditoriums/${id.id}">${id.name}</a>
+ 			<br><br>
+		#end
+		<b>Auditorium Details by id:</b>
+		<br><br>
+	  	#foreach($name in $auditoriums)
+ 			<a href="${rc.contextPath}/auditorium/${name.name}">${name.name}</a>
+ 			<br><br>
+		#end
+		<b>Assigned Auditorium</b>
+		<a href="${rc.contextPath}/auditoriums/assigned">Assigned auditorium</a>
+		<br><br>
+		<b>Print Auditoriums</b>
+		<a href="${rc.contextPath}/auditoriums/get-all/pdf">Auditoriums PDF print</a>
+		<br>
+		<br>
+		<b><a href="${rc.contextPath}/logout">Logout</a></b>
+	</body>
+</html>

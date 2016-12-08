@@ -1,0 +1,23 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<form class="form-horizontal" enctype="multipart/form-data" action="${rc.contextPath}/import" method="post">
+          <div class="form-actions">
+            <h2>Select users.json file</h2>
+            <input type="file" name="userFile"/>
+            <h2>Select tickets.json file</h2>
+            <input type="file" name="ticketFile"/>
+            <h2>Select events.json file</h2>
+            <input type="file" name="eventFile"/>
+            <h2>Select auditoriums.json file</h2>
+            <input type="file" name="auditoriumFile"/>
+            <hr>
+            <br>
+            <button type="submit">Upload</button>
+          </div>
+      </form>
+      	<br>
+		<br>
+		<b><a href="${rc.contextPath}/logout">Logout</a></b>
+	</body>
+</html>

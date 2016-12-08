@@ -1,0 +1,50 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body link=" #000000" vlink=" #000000" alink=" #000000">
+		<h1>Users</h1>
+		<br>
+		<form action="${rc.contextPath}/users/user/create/" method="post">
+		   <br>
+		   <br>
+		   	<input type="text" name="firstName" placeholder="Write first name" required>
+			<br>
+			<br>
+			<input type="text" name="lastName" placeholder="Write last name" required>		   
+			<br>
+		   <br>
+			<input type="text" name="email" placeholder="Write email name" required>
+		   <br>
+		   <br>
+		   <input type="password" name="password" required>
+		   <br>
+		   <br>
+		   <input type="text" name="roles" required>
+		   <br>
+		   <p><input type="submit" value="Send"></p>
+	  	</form>
+		<hr>
+		<b>Auditorium Details by email:</b>
+		<br><br>
+	  	#foreach($email in $users)
+ 			<a href="${rc.contextPath}/users/user/${email.email}/">${email.email}</a>
+ 			<br><br>
+		#end
+		<b>User Details by id:</b>
+		<br><br>
+	  	#foreach($name in $users)
+ 			<a href="${rc.contextPath}/users/${name.id}">${name.id}</a>
+ 			<br><br>
+		#end
+		<b>Delete user</b>
+		<br><br>
+	  	#foreach($email in $users)
+ 			<a href="${rc.contextPath}/users/remove/${email.email}/">${email.email}</a>
+ 			<br><br>
+		#end
+		<b>Print Users</b>
+		<a href="${rc.contextPath}/users/get-all/pdf">Auditoriums PDF print</a>
+		<br>
+		<br>
+		<b><a href="${rc.contextPath}/logout">Logout</a></b>
+	</body>
+</html>

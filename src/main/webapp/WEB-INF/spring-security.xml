@@ -1,0 +1,57 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                 http://www.springframework.org/schema/beans/spring-beans.xsd
+                                 http://www.springframework.org/schema/security
+                                 http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http auto-config="true" use-expressions="true">
+		<form-login default-target-url="/" login-page="/login"
+			authentication-failure-url="/login?error"
+			authentication-success-handler-ref="savedRequestAwareAuthenticationSuccessHandler" />
+		<http-basic />
+		<logout logout-url="/logout" />
+		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/tickets/purchased/*" access="hasRole('BOOKING_MANAGER')" />
+		<intercept-url pattern="/tickets/get-all/pdf" access="hasRole('BOOKING_MANAGER')" />
+		<intercept-url pattern="/**" access="hasRole('REGISTERED_USER')" />
+		<access-denied-handler error-page="/forbidden" />
+		<csrf disabled="true" />
+		<remember-me key="keepSecret" token-validity-seconds="2419200"
+			user-service-ref="jdbcGroupsImpl" token-repository-ref="tokenRepository"
+			remember-me-cookie="remember-me-cookieName" remember-me-parameter="remember-me" />
+	</http>
+
+	<beans:bean id="jdbcGroupsImpl"
+		class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<beans:property name="enableGroups" value="true" />
+		<beans:property name="enableAuthorities" value="false" />
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+
+	<beans:bean id="tokenRepository"
+		class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+
+
+	<beans:bean id="daoAuthenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="customUserDetailsService" />
+		<beans:property name="saltSource" ref="saltSource" />
+		<beans:property name="passwordEncoder" ref="passwordEncoder" />
+	</beans:bean>
+
+	<beans:bean id="saltSource"
+		class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+		<beans:property name="userPropertyToUse" value="email" />
+	</beans:bean>
+
+	<beans:bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+
+	<authentication-manager>
+		<authentication-provider ref="daoAuthenticationProvider" />
+	</authentication-manager>
+
+</beans:beans>

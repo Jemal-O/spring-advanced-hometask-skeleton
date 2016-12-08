@@ -1,0 +1,22 @@
+<html>
+	<head> 
+		<title>Mini Cinema</title>
+	</head>
+	<body link=" #000000" vlink=" #000000" alink=" #000000">
+		<h1>Tickets Service</h1>
+		</br>
+		<table border="0" CELLPADDING=0 CELLSPACING=10>
+			<tr>
+				<td><a href="${rc.contextPath}/tickets">Tickets</a></td>
+				<td><a href="${rc.contextPath}/events">Events</a></td>
+				<td><a href="${rc.contextPath}/users">Users</a></td>
+				<td><a href="${rc.contextPath}/auditoriums">Auditoriums</a></td>
+				<td><a href="${rc.contextPath}/import">Upload</a></td>
+				<td><a href="${rc.contextPath}/accounts">Accounts</a></td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<a href="${rc.contextPath}/logout">Logout</a>
+	</body>
+</html>

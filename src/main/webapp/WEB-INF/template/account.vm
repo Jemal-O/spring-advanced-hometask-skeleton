@@ -1,0 +1,7 @@
+<html>
+	<head><title>Mini Cinema</title></head>
+	<body>
+		<h1>Account Details</h1>
+		${account}
+	</body>	
+</html>
